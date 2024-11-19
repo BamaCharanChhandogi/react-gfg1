@@ -1,35 +1,15 @@
 import React from "react";
-import type { Meta, Story } from "@storybook/react";
+import { Meta } from "@storybook/react";
 
 import { GFGProfile } from "../components/GFGProfile";
-import "./GFGProfile.css";
-
-interface GFGProfileProps {
-  username: string;
-}
+import './GFGProfile.css'
 
 export default {
-  title: "Components/GFGProfile",
+  title: "App Test",
   component: GFGProfile,
-  argTypes: {
-    username: {
-      control: "text",
-      description: "GeeksforGeeks username to fetch profile for",
-    },
-  },
   parameters: {
-    layout: "centered",
+    // add parameters if needed
   },
-} satisfies Meta<typeof GFGProfile>;
+} as Meta;
 
-const Template: Story<GFGProfileProps> = (args) => <GFGProfile {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-  username: "prateekraiger",
-};
-
-export const AnotherUser = Template.bind({});
-AnotherUser.args = {
-  username: "prateekraiger",
-};
+export const App = () => <GFGProfile username={"bamacharan"}/>;
